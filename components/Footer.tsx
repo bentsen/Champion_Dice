@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="flex flex-row justify-around text-cutom-text mt-6">
                     <div>
                         <p className="text-white">Community</p>
-                        <a href="#"><span className="span hover:underline">Github</span><br/></a>
+                        <a href="https://github.com/bentsen"><span className="span hover:underline">Github</span><br/></a>
                         <a href="#"><span className="span hover:underline">Discord</span><br/></a>
                         <a href="#"><span className="span hover:underline">Feedback</span><br/></a>
                         <div className="space-x-2">

@@ -3,11 +3,11 @@ import {motion} from "framer-motion";
 import {useContext, useEffect, useState} from "react";
 import {ChampionContext} from "../store/ChampionContext/ChampionList";
 import {Champion} from "../utils/types/champion.t";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const Champions = useContext(ChampionContext);
-  const [champion, setChampion] = useState("")
-  const [championImage, setChampionImage] = useState("")
+  const [champion, setChampion] = useState<Champion>()
 
   {Champions?.map((item : Champion) => (
       <p>her er alle champs: {item.name}</p>
@@ -16,16 +16,18 @@ const Home: NextPage = () => {
   const getRandomChamp = () => {
     if (Champions) {
       const randomChamp = Champions[Math.floor(Math.random() * Champions?.length)];
-      setChampion(randomChamp.name)
-      setChampionImage(randomChamp.image.full)
+      setChampion(randomChamp)
     }
     else
       console.log("No champion exists")
   }
 
   const resetChamp = () => {
-    setChampion("")
-    setChampionImage("")
+    setChampion(null)
+  }
+
+  const myLoader=({src})=>{
+    return `https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion?.image.full}`
   }
 
   return (
@@ -36,12 +38,12 @@ const Home: NextPage = () => {
             <h2 className={"text-text-color text-base"}>Dice to get a League Of Legends Champion</h2>
             <div className="border border-text-color h-44 w-96 mt-2 text-center">
 
-                {champion === "" ? (
+                {champion == null ? (
                     <p>No Champion</p>
                 ) : (
                     <div className={"mt-2"}>
-                      <img className={"m-auto"} src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${championImage}`} alt="picture of champion"/>
-                      <p className={"text-text-color"}>{champion}</p>
+                      <Image loader={myLoader} src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion.image.full}`} width={120} height={120} alt={`picture of ${champion.name}`}/>
+                      <p className={"text-text-color"}>{champion?.name}</p>
                     </div>
                 )}
             </div>
