@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     setChampion(undefined)
   }
 
-  const myLoader=({src})=>{
+  const myLoader=()=>{
     return `https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion?.image.full}`
   }
 
