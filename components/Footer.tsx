@@ -21,7 +21,7 @@ const Footer = () => {
                     <div>
                         <p className="text-white">Support</p>
                         <a href="#"><span className="span hover:underline">FAQ</span><br/></a>
-                        <a href="#"><span className="span hover:underline">Ticker</span><br/></a>
+                        <a href="#"><span className="span hover:underline">Ticket</span><br/></a>
                         <a href="#"><span className="span hover:underline">Phone</span><br/></a>
                         <a href="#"><span className="span hover:underline">Test</span><br/></a>
                     </div>

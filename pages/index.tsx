@@ -4,9 +4,12 @@ import {useContext, useEffect, useState} from "react";
 import {ChampionContext} from "../store/ChampionContext/ChampionList";
 import {Champion} from "../utils/types/champion.t";
 import Image from "next/image";
+import api from "./api/apiHandler";
+import {VersionContext} from "../store/VersionContext/VersionList";
 
 const Home: NextPage = () => {
   const Champions = useContext(ChampionContext);
+  const Version = useContext(VersionContext);
   const [champion, setChampion] = useState<Champion>()
 
   const getRandomChamp = () => {
@@ -23,7 +26,7 @@ const Home: NextPage = () => {
   }
 
   const myLoader=()=>{
-    return `https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion?.image.full}`
+    return `https://ddragon.leagueoflegends.com/cdn/${Version}/img/champion/${champion?.image.full}`
   }
 
   return (
@@ -38,7 +41,7 @@ const Home: NextPage = () => {
                     <p>No Champion</p>
                 ) : (
                     <div className={"mt-2"}>
-                      <Image loader={myLoader} src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion.image.full}`} width={120} height={120} alt={`picture of ${champion.name}`}/>
+                      <Image loader={myLoader} src={`https://ddragon.leagueoflegends.com/cdn/${Version}/img/champion/${champion.image.full}`} unoptimized={true} width={120} height={120} alt={`picture of ${champion.name}`}/>
                       <p className={"text-text-color"}>{champion?.name}</p>
                     </div>
                 )}

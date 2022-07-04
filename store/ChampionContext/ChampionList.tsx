@@ -7,10 +7,18 @@ export const ChampionContext = React.createContext<Champion[] | undefined>([]);
 
 export default function ChampionListProvider({children}: {children: ReactNode}) {
     const [champions, setChampions] = useState<Champion[]>([]);
+    const getLastApiVersion = async () => {
+        const versionsUrl = 'https://ddragon.leagueoflegends.com/api/versions.json'
+        const response = await axios.get<string[]>(versionsUrl);
+        const data: string = await response.data[0]
+
+        return data
+    }
 
     useEffect(() =>{
         async function getChampions() {
-            axios.get<Champion>("https://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/champion.json")
+            const version = await getLastApiVersion()
+            axios.get<Champion>(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
                     .then(response => {
                         let championData = [];
                         for(let key in response.data.data) {
