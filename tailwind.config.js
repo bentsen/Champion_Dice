@@ -11,7 +11,7 @@ module.exports = {
         'orange-color' : 'rgb(253,108,64)',
         'navbar-color' : '#262321',
         'footer-color' : '#111111',
-        'cutom-text' : '#fbb033',
+        'custom-text' : '#fbb033',
         'button-color2' : '#353535',
         'button-hover' : '#0088e4',
         'button-hover2' : '#4f4f4f',
