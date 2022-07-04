@@ -9,10 +9,6 @@ const Home: NextPage = () => {
   const Champions = useContext(ChampionContext);
   const [champion, setChampion] = useState<Champion>()
 
-  {Champions?.map((item : Champion) => (
-      <p>her er alle champs: {item.name}</p>
-  ))}
-
   const getRandomChamp = () => {
     if (Champions) {
       const randomChamp = Champions[Math.floor(Math.random() * Champions?.length)];
