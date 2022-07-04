@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {useEffect, useState, useContext} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import {Champion} from "../../utils/types/champion.t";
 
@@ -18,11 +18,11 @@ export default function ChampionListProvider({children}: {children: ReactNode}) 
     useEffect(() =>{
         async function getChampions() {
             const version = await getLastApiVersion()
-            axios.get<Champion>(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
+            axios.get<any>(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
                     .then(response => {
                         let championData = [];
-                        for(let key in response.data.data) {
-                            championData.push(response.data.data[key])
+                        for(let key in response.data['data']) {
+                            championData.push(response.data['data'][key])
                         }
                  //puts champions data object into state
                 setChampions(championData)

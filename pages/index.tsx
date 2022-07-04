@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
 import {motion} from "framer-motion";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import {ChampionContext} from "../store/ChampionContext/ChampionList";
 import {Champion} from "../utils/types/champion.t";
 import Image from "next/image";
-import api from "./api/apiHandler";
 import {VersionContext} from "../store/VersionContext/VersionList";
 
 const Home: NextPage = () => {

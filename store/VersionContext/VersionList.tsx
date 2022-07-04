@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {useEffect, useState, useContext} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 
 export const VersionContext = React.createContext<string | undefined>("");
