@@ -17,7 +17,7 @@ module.exports = {
         'button-hover2' : '#4f4f4f',
         'selection-color' : '#353535',
         'login-color' : 'rgba(26,23,22,.4)',
-        'borderLogin-color' : 'rgba(0,0,0,.15)'
+        'borderLogin-color' : 'rgba(0,0,0,.15)',
       }
     },
   },

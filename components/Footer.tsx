@@ -5,7 +5,7 @@ import {faFacebookSquare, faInstagramSquare, faTwitterSquare} from "@fortawesome
 const Footer = () => {
     return(
         <>
-            <footer className={"bg-footer-color text-gray-800 fixed inset-x-0 h-44 bottom-0 border-black border-2"}>
+            <footer className={"bg-footer-color text-gray-800 inset-x-0 h-44 bottom-0 border-black border-2"}>
                 <div className="flex flex-row justify-around text-custom-text mt-6">
                     <div>
                         <p className="text-white">Community</p>
