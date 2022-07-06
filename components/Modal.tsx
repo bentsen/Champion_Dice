@@ -1,8 +1,9 @@
 import Image from "next/image";
+import {Champion} from "../utils/types/champion.t";
 
-const Modal = ({version, champion, visible, onClose}) => {
+const Modal = ({champion, visible, onClose} : Champion | any) => {
 
-    const handleOnClose = (e) => {
+    const handleOnClose = (e: any) => {
         if(e.target.id === "container")
         onClose()
     }
