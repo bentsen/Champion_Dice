@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const modal = ({version, champion, visible, onClose}) => {
+const Modal = ({version, champion, visible, onClose}) => {
 
     const handleOnClose = (e) => {
         if(e.target.id === "container")
@@ -29,4 +29,4 @@ const modal = ({version, champion, visible, onClose}) => {
     )
 }
 
-export default modal
+export default Modal

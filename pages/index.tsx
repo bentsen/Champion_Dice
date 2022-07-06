@@ -5,6 +5,7 @@ import {ChampionContext} from "../store/ChampionContext/ChampionList";
 import {Champion} from "../utils/types/champion.t";
 import Image from "next/image";
 import {VersionContext} from "../store/VersionContext/VersionList";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const Champions = useContext(ChampionContext);
@@ -53,6 +54,11 @@ const Home: NextPage = () => {
                   Roll
                 </motion.button>
               </div>
+          </div>
+        </div>
+        <div className={"mt-10 flex justify-center"}>
+          <div className={""}>
+            <p className={"text-white text-sm"}>New! Check out all <span className={"text-button-hover cursor-pointer underline"}><Link href={"/champions"}>Champions</Link></span></p>
           </div>
         </div>
     </>
