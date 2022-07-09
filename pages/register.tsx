@@ -14,7 +14,7 @@ const Register = () => {
     });
     const [formData, setFormData] = useState(initialFormData);
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         setFormData({
             ...formData,
             //Trim whiteSpace
@@ -22,7 +22,7 @@ const Register = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         console.log(formData)
 
