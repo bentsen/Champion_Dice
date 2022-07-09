@@ -9,7 +9,7 @@ const Login = () => {
                 <div>
                     <div className={"text-center"}>
                         <h1 className={"text-text-color text-4xl"}>Champion Dice Login</h1>
-                        <h2 className={"text-text-color text-base"}>We're stoked to have you back!</h2>
+                        <h2 className={"text-text-color text-base"}>We&apos;re stoked to have you back!</h2>
                     </div>
                     <div className="border-2 rounded border-black h-auto w-96 mt-2 block">
                         <div className={"border-box block bg-black"}>
