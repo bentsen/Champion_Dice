@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {useNavigate} from 'react-router-dom'
-import axiosInstance from "./api/user";
 import {useState} from "react";
 
 
@@ -20,23 +19,6 @@ const Register = () => {
             //Trim whiteSpace
             [e.target.name]: e.target.value.trim(),
         });
-    };
-
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        console.log(formData)
-
-        axiosInstance
-            .post(`user/register/`, {
-                email: formData.email,
-                user_name: formData.username,
-                password: formData.password,
-            })  //todo create error check
-            .then((res) => {
-                history('/login');
-                console.log(res)
-                console.log(res.data)
-            });
     };
 
     return(
