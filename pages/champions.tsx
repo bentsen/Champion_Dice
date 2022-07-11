@@ -64,14 +64,16 @@ const Champions = () => {
                 <div className="flex justify-center mt-5">
                     <input className={"h-10 w-72 indent-2"} type="text" value={inputValue} onChange={filterChampion} placeholder={"Type name of Champion"}/>
                 </div>
-                <div className="grid grid-cols-10 gap-4 ml-2 mt-5">
-                    {filteredList?.map((item) => (
-                        <motion.div key={item.id} initial={"hidden"} animate={"show"}>
-                            <motion.div key={item.id}>
-                                <Image className={"cursor-pointer"} onClick={() => handleClick(item)} key={item.id} src={`https://ddragon.leagueoflegends.com/cdn/${Version}/img/champion/${item.image.full}`} unoptimized={true} width={120} height={120} alt={`picture of ${item.name}`}/>
+                <div className={"flex justify-center"}>
+                    <div className="grid grid-cols-5 md:grid-cols-7 lg:grid-cols-10 gap-4 mt-5">
+                        {filteredList?.map((item) => (
+                            <motion.div key={item.id} initial={"hidden"} animate={"show"}>
+                                <motion.div key={item.id}>
+                                    <Image className={"cursor-pointer"} onClick={() => handleClick(item)} key={item.id} src={`https://ddragon.leagueoflegends.com/cdn/${Version}/img/champion/${item.image.full}`} unoptimized={true} width={120} height={120} alt={`picture of ${item.name}`}/>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
                 <div className="text-center mt-10">
                     <motion.button onClick={scrollToTop} whileHover={{scale: 1.1}} className="bg-button-hover text-white font-bold py-2 px-10 rounded">

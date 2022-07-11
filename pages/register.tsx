@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import {useNavigate} from 'react-router-dom'
 import {useState} from "react";
 
 
 const Register = () => {
-    const history = useNavigate()
     const initialFormData = Object.freeze({
         email:'',
         username:'',

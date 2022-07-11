@@ -14,6 +14,10 @@ const Navbar = () => {
         }
     }
 
+    const handleClick = () => {
+        setIsNavOpen(!isNavOpen);
+    }
+
     return (
         <>
             <nav className={"bg-navbar-color h-16 shadow-lg"}>
@@ -44,11 +48,11 @@ const Navbar = () => {
                                     <Link href={"/login"}><button className="bg-button-color2 hover:bg-button-hover2 h-8 w-16 rounded text-white">Log In</button></Link>
                                 </li>
                                 <li className="sm:inline-block">
-                                    <Link href={"#"}><button className="bg-button-color hover:bg-button-hover h-8 w-16 rounded text-white">Sign Up</button></Link>
+                                    <Link href={"/register"}><button className="bg-button-color hover:bg-button-hover h-8 w-16 rounded text-white">Sign Up</button></Link>
                                 </li>
                             </ul>
                         </div>
-                        <div className={"flex md:hidden mt-1"}>
+                        <div onClick={handleClick} className={"flex md:hidden mt-1"}>
                             <div className="p-4 space-y-2 rounded cursor-pointer shadow">
                                 <span className="block w-8 h-0.5 bg-gray-100"></span>
                                 <span className="block w-8 h-0.5 bg-gray-100"></span>
@@ -58,6 +62,34 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+            {isNavOpen ? (
+                <div className={"md:hidden w-auto w-full"}>
+                    <div className={"w-60 h-auto fixed z-10 right-0"}>
+                        <div className="items-center text-center justify-center flex bg-navbar-color">
+                            <ul className="sm:border-none text-sm">
+                                <li className={"mt-5"}>
+                                    <p className={"text-white hover:underline cursor-pointer"}>Facebook</p>
+                                </li>
+                                <li className={"mt-5"}>
+                                    <p className={"text-white hover:underline cursor-pointer"}>Instagram</p>
+                                </li>
+                                <li className={"mt-5"}>
+                                    <p className={"text-white hover:underline cursor-pointer"}>Twitter</p>
+                                </li>
+                                <li className={"mt-5"}>
+                                    <p className={"text-white hover:underline cursor-pointer"}>Discord</p>
+                                </li>
+                                <li className="mt-20">
+                                    <Link href={"/login"}><button className="bg-button-color2 hover:bg-button-hover2 h-8 w-32 rounded text-white">Log In</button></Link>
+                                </li>
+                                <li className="mt-5 mb-10">
+                                    <Link href={"/register"}><button className="bg-button-color hover:bg-button-hover h-8 w-32 rounded text-white">Sign Up</button></Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
         </>
     )
 }
