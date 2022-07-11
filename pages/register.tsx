@@ -27,7 +27,7 @@ const Register = () => {
                         <h1 className={"text-text-color text-4xl"}>Champion Dice Register</h1>
                         <h2 className={"text-text-color text-base"}>We&apos;re stoked to have you as a member!</h2>
                     </div>
-                    <div className="border-2 rounded border-black h-auto w-96 mt-2 block">
+                    <div className="border-2 rounded border-black h-auto w-auto mt-2 block">
                         <div className={"border-box block bg-black"}>
                             <div className={"text-center"}>
                                 <Image src={"/../public/logo.png"} alt={"picture of logo"} width={250} height={60}/>

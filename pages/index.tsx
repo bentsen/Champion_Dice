@@ -35,8 +35,7 @@ const Home: NextPage = () => {
           <div className={"text-center"}>
             <h1 className={"text-text-color text-4xl"}>Champion Dice</h1>
             <h2 className={"text-text-color text-base"}>Dice to get a League Of Legends Champion</h2>
-            <div className="border border-text-color h-44 w-96 mt-2 text-center">
-
+            <div className="border border-text-color h-44 w-auto mt-2 text-center">
                 {champion == undefined ? (
                     <p>No Champion</p>
                 ) : (

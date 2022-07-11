@@ -11,7 +11,7 @@ const Login = () => {
                         <h1 className={"text-text-color text-4xl"}>Champion Dice Login</h1>
                         <h2 className={"text-text-color text-base"}>We&apos;re stoked to have you back!</h2>
                     </div>
-                    <div className="border-2 rounded border-black h-auto w-96 mt-2 block">
+                    <div className="border-2 rounded border-black h-auto w-auto mt-2 block">
                         <div className={"border-box block bg-black"}>
                             <div className={"text-center"}>
                                 <Image src={"/../public/logo.png"} alt={"picture of logo"} width={250} height={60}/>
@@ -27,13 +27,13 @@ const Login = () => {
                                         <div className={"mt-5"}>
                                             <label className={"text-white"} htmlFor="">EMAIL</label>
                                             <div>
-                                                <input className={"indent-2 w-80 h-8 rounded"} type="email"/>
+                                                <input className={"indent-2 w-11/12 h-8 rounded"} type="email"/>
                                             </div>
                                         </div>
                                         <div className={"mt-5"}>
                                             <label className={"text-white"} htmlFor="">PASSWORD</label>
                                             <div>
-                                                <input className={"indent-2 w-80 h-8 rounded"} type="password"/>
+                                                <input className={"indent-2 w-11/12 h-8 rounded"} type="password"/>
                                             </div>
                                         </div>
                                         <div className={"mt-3"}>
@@ -50,7 +50,7 @@ const Login = () => {
                                         </div>
                                         <div className={"mt-5"}>
                                             <button
-                                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-80 rounded">
+                                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-11/12 rounded">
                                                 Login
                                             </button>
                                         </div>
